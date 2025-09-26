@@ -25,7 +25,7 @@ class DyGraphPrompt:
         edge_data = edges
         # task&question descriptions
         task = ("Graph Instruction: In a directed trust graph, (u, v, t) means that node u has a trust relationship with node v at time t.\n"
-                "Task Instruction: Your task is to return when node A first connected to node B.\n"
+                "Task Instruction: Your task is to return when node u first connected to node v.\n"
                 "Answer Instruction: Give the answer as an integer number at your response after 'Answer:', e.g., 'Answer: 2'.\n")
 
         tr_te_tuple = [tuple(row) for row in edge_data]
@@ -58,7 +58,7 @@ class DyGraphPrompt:
         answer = weight
 
         task = ("Graph Instruction: In a directed trust graph, (u, v, w) means that node u trusts node v with the level of w.\n"
-                "Task Instruction: Your task is to return the trust level from one node towards another.\n"
+                "Task Instruction: Your task is to return the trust level from one node to another.\n"
                 "Answer Instruction: Give the answer as an integer number at your response after 'Answer:', e.g., 'Answer: 2'.\n")
 
         question = ("Question: Given a directed trust graph with the edges {}. What is the level of trust from node {} to node {}?\n"
@@ -87,7 +87,7 @@ class DyGraphPrompt:
         # task&question descriptions
         task = (
             "Graph Instruction: In a directed trust graph, (u, v, w) means that node u trusts node v with the level of w.\n"
-            "Task Instruction: Your task is to return the trust level from one node towards another.\n"
+            "Task Instruction: Your task is to return the trust level from one node to another.\n"
             "Answer Instruction: Give the answer as an integer number at your response after 'Answer:', e.g., 'Answer: 2'.\n")
 
         tr_te_tuple = [tuple(row) for row in edge_data]
@@ -120,7 +120,7 @@ class DyGraphPrompt:
         # task&question descriptions
         task = (
             "Graph Instruction: In a directed trust graph, (u, v, w) means that node u trusts node v with the level of w.\n"
-            "Task Instruction: Your task is to return the range of trust from one node towards another.\n"
+            "Task Instruction: Your task is to return the range of trust from one node to another.\n"
             "Answer Instruction: Give the answer as two integer numbers in ascending at your response after 'Answer:', e.g., 'Answer: 1, 3'.\n")
 
         tr_te_tuple = [tuple(row) for row in edge_data]
@@ -152,7 +152,7 @@ class DyGraphPrompt:
         # task&question descriptions
         task = (
             "Graph Instruction: In a directed trust graph, (u, v, c, w) means that node u trusts node v with a trust level of w in the context of c.\n"
-            "Task Instruction:  Your task is to return the trust level from one node towards another.\n"
+            "Task Instruction:  Your task is to return the trust level from one node to another.\n"
             "Answer Instruction: Give the answer as an integer number at your response after 'Answer:', e.g., 'Answer: 2'.\n")
 
         tr_te_tuple = [tuple(row) for row in edge_data]
