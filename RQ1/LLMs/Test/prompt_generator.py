@@ -10,12 +10,8 @@ class DyGraphPrompt:
         self.cot = "You can think it step by step.\n" if self.add_cot else ""
 
     def fixed_prompt(self, task, knowledge, example, question):
-        if self.add_role == 0:
-            prompt_q = task + knowledge + example + question + self.cot
-            prompt_qs = ""
-        else:
-            prompt_q = question + self.cot
-            prompt_qs = self.role + task + knowledge + example  # act as a system
+        prompt_q = question + self.cot
+        prompt_qs = self.role + task + knowledge + example  # act as a system
 
         return prompt_q, prompt_qs
 
